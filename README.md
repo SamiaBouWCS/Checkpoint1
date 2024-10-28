@@ -38,8 +38,9 @@ Entrez  ``` df -h``` pour véritifier qu'une partition sdb1 a bien été monté 
 
 Pour la partition SWAP, nous allons utiliser l'autre méthode : fdisk  
 `n` pour créer une nouvelle partition  
- `p` pour une partition primaire.  
-Utiliser ensuite le numéro par défault (ici2) et l'espace par default (fdisk va automatiquement utiliser tout l'espace restant disponible, 4G)  
+`p` pour une partition primaire.  
+
+Utiliser ensuite le numéro par défault ("2") et l'espace par default (fdisk va automatiquement utiliser tout l'espace restant disponible, 4G)  
 `t` puis `82` pour choisir le type swap  
 `w` pour écrire les modifications  
 
@@ -52,8 +53,7 @@ Récupérer l'UUID du disk DATA avec ```lsblk -o NAME,UUID```
 
 ![1](modifswap.png)
 
-Activer le montage automatique au redémarrage en modifier le fichier de configuration fstab :``` nano /etc/fstab```
-`UUID=<UUID_du_disque> /mnt/DATA ext4 defaults 0 2`  
+Activer le montage automatique au redémarrage en modifier le fichier de configuration fstab :``` nano /etc/fstab``` 
 On retrouve l'UUID, le point de montage, le type, et les configuration par défaults  
 
 ![1]()
@@ -63,5 +63,3 @@ Ensuite redémarrer la VM : ``` reboot```
 ``` lsblk -f```pour vérifier que le disque sdb1 est toujours monté
 
 ![1]()
-
-On peut  voir en revanche que le swap a rebasculé au redémarrage sur le disque sda5, le fichier fstab n'ayant été modifié que pour le disque DATA (sdb1)
