@@ -1,4 +1,4 @@
-# Checkpoint - 1
+# Checkpoint 1 - Exercice 1
 ## Partition DATA
  **lsblk** : est utilisée pour répertorier des informations sur tous les périphériques de bloc disponibles.
 
