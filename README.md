@@ -56,10 +56,8 @@ Récupérer l'UUID du disk DATA avec ```lsblk -o NAME,UUID```
 Activer le montage automatique au redémarrage en modifier le fichier de configuration fstab :``` nano /etc/fstab``` 
 On retrouve l'UUID, le point de montage, le type, et les configuration par défaults  
 
-![1]()
-
 Ensuite redémarrer la VM : ``` reboot```  
 
 ``` lsblk -f```pour vérifier que le disque sdb1 est toujours monté
+![1](lsblk-f.png)
 
-![1]()
