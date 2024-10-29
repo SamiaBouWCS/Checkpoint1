@@ -1,4 +1,4 @@
-1. ```cut -d: -f1 /etc/passwd```
+1. cat /etc/passwd```
 2. ```chmod 744 myfile```
 3. **Variable d'environnement** : accessible dans tous les processus fils.
    **Variable locale** : accessible uniquement dans le script ou la fonction où elle est définie.
